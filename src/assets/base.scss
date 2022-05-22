@@ -33,12 +33,16 @@ input {
   font: inherit;
   padding: 4px;
   background-color: $light;
+  border: 2px transparent solid;
+  margin: 0.2rem;
   &:focus {
     background-color: white;
+    outline: none;
+    border: 2px solid $primary;
   }
 }
 
-.container {
+.card {
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
   padding: 1rem;
 }

@@ -3,7 +3,6 @@ import { RouterLink } from 'vue-router'
 //TODO Button to toggle in small screens
 </script>
 
-
 <template>
   <nav>
     <RouterLink :active-class="`active`" to="/"
@@ -17,6 +16,9 @@ import { RouterLink } from 'vue-router'
     >
     <RouterLink :active-class="`active`" to="/register"
       ><span class="material-icons-outlined"> person_add </span>Register</RouterLink
+    >
+    <RouterLink :active-class="`active`" to="/bookmarks"
+      ><span class="material-icons-outlined"> book </span>Bookmarks</RouterLink
     >
   </nav>
 </template>
