@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+// Globals
+
+$primary: rgb(235, 94, 85);
+$secondary: rgb(241, 80, 37);
+$accent: rgb(25, 133, 161);
+$light: rgb(208, 209, 172);
+$neutral-gray: rgb(47, 47, 47);
+
+html,
+body {
+  background: $neutral-gray;
+  color: $light;
+  font-family: 'Rubik', sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: $primary;
+  &:hover {
+    color: darken($primary, 10%);
+  }
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+input {
+  font: inherit;
+  padding: 4px;
+  background-color: $light;
+  &:focus {
+    background-color: white;
+  }
+}
+
+.container {
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  padding: 1rem;
+}
+
+.btn {
+  background-color: transparent;
+  border: 2px darken($neutral-gray, 5%) solid;
+  padding: 0.5rem;
+  color: $primary;
+  transition: ease 300ms;
+  &:hover {
+    background-color: darken($neutral-gray, 5%);
+    border: transparent 2px solid;
+    color: $light;
+  }
+  &:active {
+    background-color: $primary;
+  }
+}
+
+.input-group {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin: auto;
+  gap: 5px;
+
+  .btn {
+    margin-top: 1rem;
+  }
+
+  @media (max-width: 720px) {
+    width: 90%;
+  }
+}
+
+.center {
+  text-align: center;
+}
