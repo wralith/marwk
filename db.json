@@ -1,5 +1,27 @@
 {
-  "users": ["x", "y"],
+  "users": [
+    {
+      "username": "wra",
+      "email": "wra@wra.wra",
+      "password": "1231231",
+      "passwordConfirmation": "1231231",
+      "id": 1
+    },
+    {
+      "username": "test",
+      "email": "test@mail.com",
+      "password": "asdasda",
+      "passwordConfirmation": "asdasda",
+      "id": 2
+    },
+    {
+      "username": "user",
+      "email": "example@user.com",
+      "password": "1234567",
+      "passwordConfirmation": "1234567",
+      "id": 3
+    }
+  ],
   "bookmarks": [],
   "tags": []
 }

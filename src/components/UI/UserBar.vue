@@ -1,33 +1,26 @@
 <script setup lang="ts">
-import { onMounted, ref } from 'vue'
-import { injectStrict, AxiosKey } from '@/utils/InjectAxios'
-const http = injectStrict(AxiosKey)
+import { useUserStore } from '@/stores'
 
-let name = ref('')
-onMounted(async () => {
-  const resp = await http.get('/users')
-  console.log(await resp.data)
-  name.value = await resp.data[1]
-})
+const userStore = useUserStore()
 </script>
 
 <template>
-  <h2>Hopefully Your Name</h2>
-  <p>And again, hopefully last activities of yours.</p>
+  <h2 v-if="userStore.loggedIn">Welcome {{ userStore.username }}!</h2>
+  <h2 v-else>Welcome!</h2>
   <ul class="user-activities">
-    <li>First Activity</li>
-    <li>Second</li>
-    <li>Hmmm</li>
-    <li>Woow</li>
-    <li>{{ name }}</li>
-    <li>I am dummy text</li>
+    <li>Dummy Activity</li>
+    <li>Dummy Activity Too</li>
   </ul>
 </template>
 
-<style lang="scss">
+<style scoped lang="scss">
 .user-activities {
   list-style: circle;
   padding-left: 2rem;
   line-height: 2rem;
+}
+
+h2 {
+  text-transform: capitalize;
 }
 </style>

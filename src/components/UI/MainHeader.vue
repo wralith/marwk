@@ -1,16 +1,22 @@
 <script setup lang="ts">
 import { RouterLink } from 'vue-router'
+import { useUserStore } from '@/stores'
+
+let userStore = useUserStore()
 </script>
 
 <template>
   <div class="top-header">
     <h3>M<span>arw</span>k</h3>
     <div class="header-buttons">
-      <RouterLink :active-class="`active`" to="/login"
+      <RouterLink v-if="!userStore.loggedIn" :active-class="`active`" to="/login"
         ><span class="material-icons-outlined"> person </span>Login</RouterLink
       >
-      <RouterLink :active-class="`active`" to="/register"
+      <RouterLink v-if="!userStore.loggedIn" :active-class="`active`" to="/register"
         >Register<span class="material-icons-outlined"> person_add </span></RouterLink
+      >
+      <RouterLink v-if="userStore.loggedIn" :active-class="`active`" to="/profile"
+        ><span class="material-icons-outlined"> person </span>Profile</RouterLink
       >
     </div>
   </div>
