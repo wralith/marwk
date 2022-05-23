@@ -1,3 +1,16 @@
+<script setup lang="ts">
+import { onMounted, ref } from 'vue'
+import { injectStrict, AxiosKey } from '@/utils/InjectAxios'
+const http = injectStrict(AxiosKey)
+
+let name = ref('')
+onMounted(async () => {
+  const resp = await http.get('/users')
+  console.log(await resp.data)
+  name.value = await resp.data[1]
+})
+</script>
+
 <template>
   <h2>Hopefully Your Name</h2>
   <p>And again, hopefully last activities of yours.</p>
@@ -6,6 +19,7 @@
     <li>Second</li>
     <li>Hmmm</li>
     <li>Woow</li>
+    <li>{{ name }}</li>
     <li>I am dummy text</li>
   </ul>
 </template>
