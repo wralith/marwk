@@ -18,6 +18,11 @@ export const useUserStore = defineStore('user', {
       this.username = user.username
       this.email = user.email
       this.id = user.id
+    },
+    async logOut() {
+      this.username = ''
+      this.email = ''
+      this.id = null
     }
   },
   getters: {

@@ -28,7 +28,7 @@ const onSubmit = handleSubmit(async (values) => {
     )
     if (response?.data?.length > 0) {
       userStore.setUser(response.data[0])
-      router.push({ name: 'home' })
+      router.push({ name: 'profile' })
     } else {
       isLoginFailed.value = true
     }

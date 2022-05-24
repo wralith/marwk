@@ -1,5 +1,7 @@
 <script setup lang="ts">
 import { RouterLink } from 'vue-router'
+import { useUserStore } from '@/stores'
+const userStore = useUserStore()
 //TODO Button to toggle in small screens
 </script>
 
@@ -11,11 +13,14 @@ import { RouterLink } from 'vue-router'
     <RouterLink :active-class="`active`" to="/about"
       ><span class="material-icons-outlined">info</span>About</RouterLink
     >
-    <RouterLink :active-class="`active`" to="/login"
+    <RouterLink v-if="!userStore.loggedIn" :active-class="`active`" to="/login"
       ><span class="material-icons-outlined"> person </span>Login</RouterLink
     >
-    <RouterLink :active-class="`active`" to="/register"
+    <RouterLink v-if="!userStore.loggedIn" :active-class="`active`" to="/register"
       ><span class="material-icons-outlined"> person_add </span>Register</RouterLink
+    >
+    <RouterLink v-if="userStore.loggedIn" :active-class="`active`" to="/profile"
+      ><span class="material-icons-outlined"> person </span>Profile</RouterLink
     >
     <RouterLink :active-class="`active`" to="/bookmarks"
       ><span class="material-icons-outlined"> book </span>Bookmarks</RouterLink

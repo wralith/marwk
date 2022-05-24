@@ -18,6 +18,9 @@ let userStore = useUserStore()
       <RouterLink v-if="userStore.loggedIn" :active-class="`active`" to="/profile"
         ><span class="material-icons-outlined"> person </span>Profile</RouterLink
       >
+      <a v-on:click="userStore.logOut" v-if="userStore.loggedIn"
+        ><span class="material-icons-outlined"> logout </span>Logout</a
+      >
     </div>
   </div>
 </template>
@@ -42,9 +45,10 @@ let userStore = useUserStore()
     a {
       display: flex;
       gap: 0.5rem;
-      align-items: center;
+      align-items: flex-end;
       border: 1px solid $primary;
       padding: 0.3rem;
+      cursor: pointer;
       &:hover {
         background-color: $light;
       }
