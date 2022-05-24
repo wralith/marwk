@@ -10,6 +10,7 @@
     "json-server": "json-server --watch db.json --port 3004"
   },
   "dependencies": {
+    "@formkit/auto-animate": "1.0.0-beta.1",
     "axios": "^0.27.2",
     "pinia": "^2.0.13",
     "pinia-plugin-persistedstate": "^1.6.0",
