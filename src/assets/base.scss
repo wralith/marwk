@@ -33,7 +33,9 @@ ul {
   padding: 0;
 }
 
-input {
+input,
+select,
+textarea {
   font: inherit;
   padding: 4px;
   background-color: $light;

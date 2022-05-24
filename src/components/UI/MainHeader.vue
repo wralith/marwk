@@ -9,18 +9,14 @@ let userStore = useUserStore()
   <div class="top-header">
     <h3>M<span>arw</span>k</h3>
     <div class="header-buttons">
-      <RouterLink v-if="!userStore.loggedIn" :active-class="`active`" to="/login"
-        ><span class="material-icons-outlined"> person </span>Login</RouterLink
-      >
+      <RouterLink v-if="!userStore.loggedIn" :active-class="`active`" to="/login">Login</RouterLink>
       <RouterLink v-if="!userStore.loggedIn" :active-class="`active`" to="/register"
-        >Register<span class="material-icons-outlined"> person_add </span></RouterLink
+        >Register</RouterLink
       >
       <RouterLink v-if="userStore.loggedIn" :active-class="`active`" to="/profile"
-        ><span class="material-icons-outlined"> person </span>Profile</RouterLink
+        >Profile</RouterLink
       >
-      <a v-on:click="userStore.logOut" v-if="userStore.loggedIn"
-        ><span class="material-icons-outlined"> logout </span>Logout</a
-      >
+      <a v-on:click="userStore.logOut" v-if="userStore.loggedIn">Logout</a>
     </div>
   </div>
 </template>
@@ -46,11 +42,9 @@ let userStore = useUserStore()
       display: flex;
       gap: 0.5rem;
       align-items: flex-end;
-      border: 1px solid $primary;
-      padding: 0.3rem;
       cursor: pointer;
       &:hover {
-        background-color: $light;
+        color: $light;
       }
     }
   }

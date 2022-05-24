@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import BookmarkUnit from '../components/Bookmark/BookmarkUnit.vue'
+import NewBookmark from '../components/Bookmark/NewBookmark.vue'
 const dummyData = ref([
   {
     title: 'Wralith',
@@ -28,17 +29,20 @@ const dummyData = ref([
   }
 ])
 
-// To test auto animate! It is awesome!!
-const removeLast = () => dummyData.value.pop()
+const isAddBookmark = ref(false)
 </script>
 
 <template>
+  <NewBookmark v-if="isAddBookmark" @closeModal="isAddBookmark = !isAddBookmark" />
   <ul v-auto-animate class="bookmarks">
     <li :key="item.title" v-for="item in dummyData">
       <BookmarkUnit :BookmarkData="item" />
     </li>
   </ul>
-  <button style="margin-top: 3rem" v-on:click="removeLast">Test Auto Animate</button>
+  <button class="btn" v-on:click="isAddBookmark = true">
+    Add New Bookmark
+    <span class="material-icons-outlined"> bookmark_add </span>
+  </button>
 </template>
 
 <style scoped lang="scss">
@@ -54,5 +58,11 @@ const removeLast = () => dummyData.value.pop()
       width: calc(50% - 0.5rem);
     }
   }
+}
+.btn {
+  display: flex;
+  align-items: flex-end;
+  margin-top: 2rem;
+  gap: 0.5rem;
 }
 </style>
