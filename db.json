@@ -32,6 +32,26 @@
       "date": 1653470235488,
       "userID": 1,
       "id": 1
+    },
+    {
+      "title": "Google",
+      "url": "http://google.com",
+      "description": "It is just a google, search engine!",
+      "tag": "#general",
+      "likes": 0,
+      "date": 1653510462514,
+      "userID": 1,
+      "id": 2
+    },
+    {
+      "title": "Wra's Twitter",
+      "url": "http://twitter.com/wralith",
+      "description": "Hmm, my twitter",
+      "tag": "#social",
+      "likes": 0,
+      "date": 1653510662505,
+      "userID": 1,
+      "id": 3
     }
   ]
 }

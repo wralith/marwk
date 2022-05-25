@@ -4,6 +4,7 @@ const props = defineProps(['BookmarkData'])
 
 // Didn't like how it looks when hided, initially open for now
 const isFullDate = ref(true)
+const bookmarkDate = new Date(props.BookmarkData.date)
 </script>
 
 <template>
@@ -13,7 +14,7 @@ const isFullDate = ref(true)
       <a><span class="material-icons-outlined"> hotel_class </span></a>
       <a><span class="material-icons-outlined"> note_add </span></a>
       <a><span class="material-icons-outlined"> share </span></a>
-      <a :href="props.BookmarkData.link"
+      <a :href="props.BookmarkData.url"
         ><span class="material-icons-outlined"> double_arrow </span></a
       >
     </div>
@@ -22,9 +23,7 @@ const isFullDate = ref(true)
 
     <small class="date" @click="isFullDate = !isFullDate"
       ><a v-if="!isFullDate"> Show Date</a
-      ><span v-if="isFullDate"
-        >Added in {{ props.BookmarkData.date.toLocaleTimeString() }}</span
-      ></small
+      ><span v-if="isFullDate">Added in {{ bookmarkDate.toLocaleDateString() }}</span></small
     >
   </section>
 </template>

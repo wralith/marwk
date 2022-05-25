@@ -1,7 +1,7 @@
 import { injectStrict, AxiosKey } from '@/utils/InjectAxios'
 const http = injectStrict(AxiosKey)
 
-interface Bookmark {
+export interface Bookmark {
   id: number | null
   title: string
   url: string
