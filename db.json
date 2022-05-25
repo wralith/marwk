@@ -22,6 +22,16 @@
       "id": 3
     }
   ],
-  "bookmarks": [],
-  "tags": []
+  "bookmarks": [
+    {
+      "title": "Localhost",
+      "url": "http://localhost:3000",
+      "description": "It is the test bookmark!",
+      "tag": "#programming",
+      "likes": 0,
+      "date": 1653470235488,
+      "userID": 1,
+      "id": 1
+    }
+  ]
 }

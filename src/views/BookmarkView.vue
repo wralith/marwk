@@ -2,6 +2,9 @@
 import { ref } from 'vue'
 import BookmarkUnit from '../components/Bookmark/BookmarkUnit.vue'
 import NewBookmark from '../components/Bookmark/NewBookmark.vue'
+import { useUserStore } from '@/stores/userStore'
+
+const userStore = useUserStore()
 const dummyData = ref([
   {
     title: 'Wralith',
@@ -33,14 +36,20 @@ const isAddBookmark = ref(false)
 </script>
 
 <template>
-  <NewBookmark v-if="isAddBookmark" @closeModal="isAddBookmark = !isAddBookmark" />
+  <div v-show="isAddBookmark">
+    <NewBookmark @closeModal="isAddBookmark = !isAddBookmark" />
+  </div>
   <ul v-auto-animate class="bookmarks">
     <li :key="item.title" v-for="item in dummyData">
       <BookmarkUnit :BookmarkData="item" />
     </li>
   </ul>
-  <button class="btn" v-on:click="isAddBookmark = true">
+  <button v-if="userStore.loggedIn" class="btn" v-on:click="isAddBookmark = true">
     Add New Bookmark
+    <span class="material-icons-outlined"> bookmark_add </span>
+  </button>
+  <button v-else disabled class="btn" v-on:click="isAddBookmark = true">
+    Login to Add Bookmark
     <span class="material-icons-outlined"> bookmark_add </span>
   </button>
 </template>

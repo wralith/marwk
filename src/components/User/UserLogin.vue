@@ -2,7 +2,7 @@
 import { useField, useForm } from 'vee-validate'
 import { object, string } from 'yup'
 import { injectStrict, AxiosKey } from '@/utils/InjectAxios'
-import { useUserStore } from '@/stores'
+import { useUserStore } from '@/stores/userStore'
 import router from '@/router'
 import { ref } from 'vue'
 

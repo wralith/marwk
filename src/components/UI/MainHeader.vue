@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { RouterLink } from 'vue-router'
-import { useUserStore } from '@/stores'
+import { useUserStore } from '@/stores/userStore'
 
 let userStore = useUserStore()
 </script>

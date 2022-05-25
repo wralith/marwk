@@ -67,6 +67,11 @@ textarea {
   &:active {
     background-color: $primary;
   }
+  &:disabled {
+    background-color: gray;
+    color: white;
+    cursor: not-allowed;
+  }
 }
 
 .input-group {

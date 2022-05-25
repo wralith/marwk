@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { RouterLink } from 'vue-router'
-import { useUserStore } from '@/stores'
+import { useUserStore } from '@/stores/userStore'
 const userStore = useUserStore()
 //TODO Button to toggle in small screens
 </script>
