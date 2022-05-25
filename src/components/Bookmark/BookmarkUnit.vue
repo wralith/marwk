@@ -4,6 +4,7 @@ const props = defineProps(['BookmarkData'])
 
 // Didn't like how it looks when hided, initially open for now
 const isFullDate = ref(true)
+const isShowDescription = ref(false)
 const bookmarkDate = new Date(props.BookmarkData.date)
 </script>
 
@@ -19,7 +20,10 @@ const bookmarkDate = new Date(props.BookmarkData.date)
       >
     </div>
     <hr />
-    <p>{{ props.BookmarkData.description }}</p>
+    <p v-auto-animate @click="isShowDescription = !isShowDescription">
+      <a v-if="!isShowDescription">Show Description</a>
+      <span v-else>{{ props.BookmarkData.description }}</span>
+    </p>
 
     <small class="date" @click="isFullDate = !isFullDate"
       ><a v-if="!isFullDate"> Show Date</a
